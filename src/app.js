@@ -10,24 +10,6 @@ import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } fro
 import getVisibleExpenses from './selectors/expenses';
 
 const store = configureStore();
-store.dispatch(addExpense({
-    description: 'Water bill',
-    amount: 900,
-    createdAt: 0
-}));
-store.dispatch(addExpense({
-    description: 'Gas bill',
-    amount: 120,
-    createdAt: 1
-}));
-store.dispatch(addExpense({
-    description: 'rent',
-    amount: 500,
-    createdAt: 2
-}));
-
-
-console.log(getVisibleExpenses(store.getState().expenses, store.getState().filters));
 
 const jsx = (
     <Provider store={store}>
