@@ -21,44 +21,54 @@ const database = firebase.database();
 
 export { firebase, database as default };
 
+// // child_removed
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+
+// // child_changed
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+
+// // child_added
+// database.ref('expenses').on('child_added', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+
+// // database.ref('expenses')
+// //   .once('value')
+// //   .then((snapshot) => {
+// //     const expenses = [];
+
+// //     snapshot.forEach((childSnapshot) => {
+// //       expenses.push({
+// //         id: childSnapshot.key,
+// //         ...childSnapshot.val()
+// //       });
+// //     });
+
+// //     console.log(expenses);
+// //   });
+
+// // database.ref('expenses').on('value', (snapshot) => {
+// //   const expenses = [];
+
+// //   snapshot.forEach((childSnapshot) => {
+// //     expenses.push({
+// //       id: childSnapshot.key,
+// //       ...childSnapshot.val()
+// //     });
+// //   });
+
+// //   console.log(expenses);
+// // });
 
 // database.ref('expenses').push({
-//     description: 'Rent',
-//     amount: 900,
-//     createdAt: 23090 
-// });
-
-
-// database.ref('expenses').push({
-//   description: 'water bill',
-//   amount: 300,
-//   createdAt: 21000 
-// });
-
-
-// database.ref('expenses').push({
-//   description: 'electric bill',
-//   amount: 600,
-//   createdAt: 21123
-// });
-
-
-
-
-// database.ref('expenses').on('child_changed', (childSnap) => {
-//     console.log(childSnap.key, childSnap.val());
-// });
-
-// database.ref('expenses').on('value', (snapshot) => {
-//     const expenses = [];
-
-//     snapshot.forEach((childSnap) => {
-//         expenses.push({
-//             id: childSnap.key,
-//             ...childSnap.val()
-//         });
-//     });
-//     console.log(expenses);
+//   description: 'Rent',
+//   note: '',
+//   amount: 109500,
+//   createdAt: 976123498763
 // });
 
 
@@ -66,48 +76,60 @@ export { firebase, database as default };
 
 
 
+// // database.ref('notes/-Krll52aVDQ3X6dOtmS7').remove();
 
+// // database.ref('notes').push({
+// //   title: 'Course Topics',
+// //   body: 'React Native, Angular, Python'
+// // });
 
-// database.ref('expenses').push({
-//     description: 'Rent',
-//     amount: 100,
-//     createdAt: -21000 
-// });
+// // database.ref().on('value', (snapshot) => {
+// //   const val = snapshot.val();
+// //   console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
+// // })
 
+// // Setup data sub -> Andrew is a Software Developer at Amazon.
 
-// database.ref().on('value', (snapshot) => {
-//     console.log(snapshot.val().name, 'height is', snapshot.val().attributes.height)
-// });
+// // Change the data and make sure it reprints
 
+// // database.ref('location/city')
+// //   .once('value')
+// //   .then((snapshot) => {
+// //     const val = snapshot.val();
+// //     console.log(val);
+// //   })
+// //   .catch((e) => {
+// //     console.log('Error fetching data', e);
+// //   });
 
-// setTimeout(() => {
-//     database.ref().set({
-//         name: "Eyal Ohayon",
-//         attributes: {
-//             height: 150,
-//             whight: 65
-//     }}).then(() => {
-//         console.log('data is saved');
-//     }).catch((e) => {
-//         console.log('this failed', e);
-//     });
-        
-// }, 3500);
+// // database.ref().set({
+// //   name: 'Andrew Mead',
+// //   age: 26,
+// //   stressLevel: 6,
+// //   job: {
+// //     title: 'Software developer',
+// //     company: 'Google'
+// //   },
+// //   location: {
+// //     city: 'Philadelphia',
+// //     country: 'United States'
+// //   }
+// // }).then(() => {
+// //   console.log('Data is saved!');
+// // }).catch((e) => {
+// //   console.log('This failed.', e);
+// // });
 
-// firebase.database().ref().update({
-//     name: "other",
-//     'attributes/height': 200
-// }).then(() => {
-//     console.log('data is updated');
-// }).catch((e) => {
-//     console.log('remove failed', e);
-// });
+// // database.ref().update({
+// //   stressLevel: 9,
+// //   'job/company': 'Amazon',
+// //   'location/city': 'Seattle'
+// // });
 
-
-// firebase.database().ref().set({
-//     name: "Eyal Ohayon",
-//     attributes: {
-//         height: 150,
-//         whight: 65
-//     }
-// });
+// // database.ref()
+// //   .remove()
+// //   .then(() => {
+// //     console.log('Data was removed');
+// //   }).catch((e) => {
+// //     console.log('Did not remove data', e);
+// //   });
